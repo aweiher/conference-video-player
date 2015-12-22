@@ -10,7 +10,9 @@
     "watch-jade": "./node_modules/.bin/jade -H --watch src/client/ --out dist/client",
     "watch": "npm run watch-js & npm run watch-jade",
     "start": "node dist/server",
-    "dev": "npm run compile-server & npm run watch & npm start"
+    "dev": "npm run compile-server & npm run watch & npm start",
+    "test": "./node_modules/.bin/karma start karma.config.js --single-run",
+    "test:watch": "./node_modules/.bin/karma start karma.config.js"
   },
   "repository": {
     "type": "git",
@@ -38,7 +40,7 @@
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.15",
     "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1"
+    "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
     "phantomjs": "^1.9.19",
