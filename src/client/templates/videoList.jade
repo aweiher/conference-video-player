@@ -1,4 +1,6 @@
 b Show a video list
 
+button((click)="updateVideos()") update
+
 ul
     li(*ngFor="#video of videos") {{video.url}}
