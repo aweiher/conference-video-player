@@ -3,7 +3,8 @@ import Hapi = require('hapi');
 import path = require('path');
 
 let server = new Hapi.Server(''),
-    basePath = path.join(__dirname, '../../dist/client');
+    basePath = path.join(__dirname, '../../dist/client'),
+    jspmPath = path.join(__dirname, '../../dist/jspm_packages');
 
 server.connection({port: 3000});
 server.register(require('inert'), function () {});
@@ -26,6 +27,19 @@ server.route({
     handler: {
         directory: {
             path: basePath,
+            redirectToSlash: true,
+            index: true
+        }
+    }
+});
+
+
+server.route({
+    method: 'GET',
+    path: '/jspm_packages/{p*}',
+    handler: {
+        directory: {
+            path: jspmPath,
             redirectToSlash: true,
             index: true
         }

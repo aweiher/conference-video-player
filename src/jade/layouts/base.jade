@@ -4,8 +4,11 @@ html
     head
         title Developer Conference Video Player
         block head
+        script(src="/jspm_packages/system.js")
+        script(src="/config.js")
 
     body
         block content
         +script("bundle")
 
+        script System.import('app');
