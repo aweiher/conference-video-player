@@ -10,7 +10,7 @@
     "watch-jade": "./node_modules/.bin/jade -H --watch src/client/ --out dist/client",
     "watch": "npm run watch-js & npm run watch-jade",
     "start": "node dist/server",
-    "dev": "compile-server & npm run watch & npm start"
+    "dev": "npm run compile-server & npm run watch & npm start"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "jade": "^1.11.0",
     "ts-loader": "^0.7.2",
     "tsd": "^0.6.5",
+    "typescript": "^1.7.5",
     "webpack": "^1.12.9"
   },
   "devDependencies": {

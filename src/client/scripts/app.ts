@@ -1,4 +1,8 @@
 import "reflect-metadata";
+import "es6-shim";
+import  "angular2/bundles/angular2-polyfills.js";
+import 'rxjs';
+
 //import "zone.js";
 import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
@@ -8,15 +12,18 @@ import {VideoRestService} from './videoRestService';
 
 import {VideoList} from './videoList.ts';
 
-import {Http} from 'angular2/http';
+import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'dev-conference-videos-app',
     templateUrl: '/templates/appTemplate.html',
     directives: [VideoList],
-    providers: [Http]
+    viewProviders: [HTTP_PROVIDERS]
 })
-class AppComponent {}
+class AppComponent {
+    constructor() {
+    }
+}
 
-bootstrap(AppComponent, [VideoService, VideoRestService]);
+bootstrap(AppComponent, [VideoService, VideoRestService, HTTP_PROVIDERS]);
 
