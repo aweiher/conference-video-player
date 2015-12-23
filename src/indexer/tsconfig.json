@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "listFiles": false,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noLib": false,
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "ES5",
+    "outDir": "../../dist/indexer"
+  },
+  "files": [
+    "./findYoutubeVideos.ts",
+    "../../typings/tsd.d.ts"
+  ]
+}
