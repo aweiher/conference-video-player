@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import "es6-shim";
 import {VideoList} from './videoList';
-import {IVideo, IVideoService} from "./interfaces";
+import {IVideo, IVideoService} from "../../interfaces";
 
 const FAKE_VIDEOS = [
     {url: 'foo'},

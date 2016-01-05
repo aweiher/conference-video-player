@@ -7,16 +7,16 @@ import 'rxjs';
 import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
 
-import {VideoService} from './videoService';
-import {VideoRestService} from './videoRestService';
+import {VideoService} from '../../services/videoService';
+import {VideoRestService} from '../../services/videoRestService';
 
-import {VideoList} from './videoList.ts';
+import {VideoList} from '../videoList/videoList.ts';
 
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'dev-conference-videos-app',
-    templateUrl: '/templates/appTemplate.html',
+    templateUrl: require('./appTemplate.jade')(),
     directives: [VideoList],
     viewProviders: [HTTP_PROVIDERS]
 })
