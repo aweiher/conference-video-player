@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import {IVideo, IVideoService} from "./interfaces";
+import {IVideo, IVideoService} from "../interfaces";
 import {VideoRestService} from "./videoRestService";
 import {Response} from 'angular2/http';
 

@@ -1,13 +1,13 @@
-import {IVideo, IVideoService} from "./interfaces";
+import {IVideo, IVideoService} from "../../interfaces";
 import {Component, View, NgZone} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {VideoService} from "./videoService";
+import {VideoService} from "../../services/videoService";
 
 @Component({
     selector: 'video-list',
     viewProviders: [HTTP_PROVIDERS],
     providers: [VideoService],
-    templateUrl: '/templates/videoList.html'
+    templateUrl: require('./videoList.jade')()
 })
 export class VideoList {
     videos: IVideo[];

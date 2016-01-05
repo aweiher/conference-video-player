@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/client/scripts/app.ts',
+    entry: './src/client/components/app/app.ts',
     output: {
         filename: 'dist/client/js/bundle.js'
     },
@@ -8,7 +8,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.ts$/, loader: 'ts-loader' }
+            { test: /\.ts$/, loader: 'ts-loader' },
+            { test: /\.jade$/, loader: 'jade' }
         ]
     }
 }
