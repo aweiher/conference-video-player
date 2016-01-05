@@ -40,7 +40,8 @@
     "ts-loader": "^0.7.2",
     "tsd": "^0.6.5",
     "typescript": "^1.7.5",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.9",
+    "webpack-config": "^3.1.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^0.15.9",
