@@ -1,5 +1,8 @@
 var path = require('path');
 var cwd = process.cwd();
+var WebpackConfig = require('webpack-config');
+var webpackConfig = new WebpackConfig();
+var origWebpackConfig = webpackConfig.extend('webpack.config');
 
 module.exports = function (config) {
     config.set({
@@ -16,7 +19,7 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             './node_modules/phantomjs-polyfill/bind-polyfill.js',
-            'src/client/scripts/*.spec.ts'
+            'src/client/**/*.spec.ts'
         ],
 
 
@@ -28,7 +31,7 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             //'src/tests.bundle.js': ['webpack', 'sourcemap']
-            'src/client/scripts/*.spec.ts': ['webpack']
+            'src/client/**/*.spec.ts': ['webpack']
         },
 
         webpack: {
@@ -43,9 +46,7 @@ module.exports = function (config) {
                 }
             },
             module: {
-                loaders: [
-                    {test: /\.ts$/, loader: 'ts-loader'}
-                ]
+                loaders: origWebpackConfig.module.loaders
             },
             stats: {
                 colors: true,
