@@ -1,11 +1,15 @@
-include ../mixins/tags
 
 html
     head
         title Developer Conference Video Player
         block head
 
+        each style in htmlWebpackPlugin.files.css
+            link(href="/#{style}", rel="stylesheet")
+
     body
         block content
-        +script("bundle")
+
+        each script in htmlWebpackPlugin.files.js
+            script(src="/#{script}")
 

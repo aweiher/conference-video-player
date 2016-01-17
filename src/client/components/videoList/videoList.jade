@@ -1,6 +1,6 @@
-b Show a video list
+b Show a channel list
 
-button((click)="updateVideos()") update
+button((click)="updateChannels()") update
 
 ul
-    li(*ngFor="#video of videos") {{video.url}}
+    li(*ngFor="#channel of channels") {{channel.title}}

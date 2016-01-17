@@ -1,32 +1,19 @@
-import {IVideo, IVideoService} from "../../interfaces";
+import {IVideo, IVideoService, IChannel} from "../../interfaces";
 import {Component, View, NgZone} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {VideoService} from "../../services/videoService";
 
+
+
 @Component({
     selector: 'video-list',
     viewProviders: [HTTP_PROVIDERS],
-    providers: [VideoService],
-    templateUrl: require('./videoList.jade')()
+    template: require('./videoList.jade')()
 })
 export class VideoList {
-    videos: IVideo[];
+    channels: IChannel[] = [];
 
-    constructor(public videoService: VideoService) {
-        this.videos = [];
-        this.loadVideos();
+    constructor() {
     }
 
-    updateVideos() {
-        this.loadVideos();
-    }
-
-    loadVideos() {
-        this.videoService.getAll().subscribe( videos => {
-            this.videos.length = 0;
-            videos.forEach((video) => {
-                this.videos.push(video);
-            });
-        });
-    }
 }

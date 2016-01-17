@@ -1,0 +1,9 @@
+h1 Show Conferences
+
+ul
+    li(*ngFor="#conference of conferences")
+        | {{conference.name}}
+        conference(
+            [conference]="conference",
+            (onItemSelected)="onConferenceSelected($event)"
+        )

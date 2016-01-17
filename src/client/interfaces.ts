@@ -1,4 +1,12 @@
 
+export interface IConference {
+    name: string,
+    id: string,
+    title: string;
+    thumbnail: IThumbnail,
+    description: string,
+    playlists: IPlaylist[]
+}
 
 export interface IVideo {
     url: string
@@ -24,7 +32,7 @@ export interface IPlaylist {
     id: string;
     title: string;
     description: string;
-    
+
     thumbnail: IThumbnail;
     videos: IVideo[];
 }
@@ -34,7 +42,7 @@ export interface IChannel {
     name: string;
     description: string;
     title: string;
-    
+
     playlists: IPlaylist[];
     videos: IVideo[];
 }
