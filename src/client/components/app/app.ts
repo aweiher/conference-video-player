@@ -16,7 +16,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'dev-conference-videos-app',
-    templateUrl: require('./appTemplate.jade')(),
+    template: require('./appTemplate.jade')(),
     directives: [VideoList],
     viewProviders: [HTTP_PROVIDERS]
 })
