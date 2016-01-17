@@ -1,8 +1,6 @@
-h1 Show Conferences
 
-.ui.grid
+.ui.grid.stackable
     .six.wide.column(*ngFor="#conference of conferences")
-        | {{conference.name}}
         conference(
             [conference]="conference",
             (onItemSelected)="onConferenceSelected($event)"
