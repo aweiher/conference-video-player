@@ -8,6 +8,6 @@ export class VideoRestService {
     constructor(public http:Http) {}
 
     getAll() {
-        return this.http.get('/api/videos');
+        return this.http.get('/data'); 
     }
 }
