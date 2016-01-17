@@ -16,16 +16,16 @@ describe('VideoList', () => {
             subscribe: (cb => cb(FAKE_VIDEOS))
         });
     });
-
-    it('initialize the videos with an empty array', () => {
-        var videoList = new VideoList(this.fakeVideoService);
-        expect(videoList.videos).toEqual(FAKE_VIDEOS);
-    });
-
-    it('loads all videos on starts', () => {
-        new VideoList(this.fakeVideoService);
-
-        expect(this.fakeVideoService.getAll).toHaveBeenCalled();
-    });
+    //
+    //xit('initialize the videos with an empty array', () => {
+    //    var videoList = new VideoList(this.fakeVideoService);
+    //    expect(videoList.videos).toEqual(FAKE_VIDEOS);
+    //});
+    //
+    //xit('loads all videos on starts', () => {
+    //    new VideoList(this.fakeVideoService);
+    //
+    //    expect(this.fakeVideoService.getAll).toHaveBeenCalled();
+    //});
 });
 

@@ -1,29 +1,20 @@
-import "reflect-metadata";
-import "es6-shim";
-import  "angular2/bundles/angular2-polyfills.js";
-import 'rxjs';
-
-//import "zone.js";
-import {bootstrap} from 'angular2/platform/browser';
-import {Component} from 'angular2/core';
-
-import {VideoService} from '../../services/videoService';
-import {VideoRestService} from '../../services/videoRestService';
-
-import {VideoList} from '../videoList/videoList.ts';
-
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {VideoList} from '../videoList/videoList.ts';
+import {Component} from "angular2/core";
+import {ConferenceList} from "../conferenceList/index";
+
+var data = require('../../../data/data.json');
 
 @Component({
     selector: 'dev-conference-videos-app',
     template: require('./appTemplate.jade')(),
-    directives: [VideoList],
+    directives: [ConferenceList],
     viewProviders: [HTTP_PROVIDERS]
 })
-class AppComponent {
+export class AppComponent {
+    data;
     constructor() {
+        this.data = data;
     }
 }
-
-bootstrap(AppComponent, [VideoService, VideoRestService, HTTP_PROVIDERS]);
 
