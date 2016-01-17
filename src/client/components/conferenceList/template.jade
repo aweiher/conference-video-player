@@ -1,7 +1,7 @@
 h1 Show Conferences
 
-ul
-    li(*ngFor="#conference of conferences")
+.ui.grid
+    .six.wide.column(*ngFor="#conference of conferences")
         | {{conference.name}}
         conference(
             [conference]="conference",

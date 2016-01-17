@@ -1,3 +1,7 @@
-div((click)="onClick()").conference
-    h3 {{conference.name}}
-    img(src="{{conference.thumbnail.url}}")
+div((click)="onClick()").conference.ui.card
+    .image
+        img(src="{{conference.thumbnail.url}}")
+    .content
+        a.header {{conference.name}}
+        .description
+            | {{conference.description}}

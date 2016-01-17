@@ -1,5 +1,6 @@
 var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     jade = require('jade');
 
 module.exports = {
@@ -19,6 +20,21 @@ module.exports = {
             { test: /\.ts$/, loader: 'ts-loader' },
             { test: /\.jade$/, loader: 'jade' },
             { test: /\.json$/, loader: 'json' },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style', 'css')
+            },
+
+            {
+                test: /\.(woff2?|svg|png)$/,
+                loader: 'url?limit=10000&name=assets/[hash].font.[ext]'
+            },
+
+            {
+                test: /\.(ttf|eot|woff)$/,
+                loader: 'file?name=assets/[hash].font.[ext]'
+            }
+
         ]
     },
 
@@ -29,6 +45,7 @@ module.exports = {
             templateContent: function(templateParams, compilation) {
                 return jade.compileFile('src/client/index.jade')(templateParams);
             }
-        })
+        }),
+        new ExtractTextPlugin('assets/[name]-[hash].css')
     ]
 }
